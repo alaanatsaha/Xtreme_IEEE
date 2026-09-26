@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ieee-xtreme-scoreboard
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: ORGANIZER_PASSWORD
+        sync: false

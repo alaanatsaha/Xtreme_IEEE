@@ -39,3 +39,8 @@ Requires Node.js 20.19+ or 22.12+.
 To create a production build:
 
     npm run build
+
+## Deployment
+
+The project includes a `render.yaml` configuration for deployment on Render.
+Create a new Blueprint from this repository on Render, set the `ORGANIZER_PASSWORD` environment variable, and deploy. Render will build and run the complete application, including the API server.
