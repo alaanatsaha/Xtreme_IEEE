@@ -1,37 +1,41 @@
 # IEEE Xtreme — University Scoreboard (React + Node)
 
-طوّرت هذه اللوحة لإدارة نتائج مسابقة **IEEE Xtreme** داخل الجامعة.
-تتيح إضافة الفرق والأعضاء، تسجيل النقاط، إدارة التحديات، وعرض الترتيب والنشاط بشكل مباشر.
+I developed this scoreboard to manage IEEE Xtreme competition results within the university.
+It supports team and member management, score tracking, challenge administration, and live ranking updates.
 
-استخدمت **React وVite** لبناء الواجهة، و**Node.js** لبناء خادم API. يحفظ النظام البيانات محليًا، ويقسّم التطبيق إلى شاشة عامة ولوحة منظّم محمية بكلمة مرور.
+I built the interface with **React and Vite**, and implemented the API server with **Node.js**. The system stores data locally and separates the public scoreboard from the password-protected organizer dashboard.
 
-## المزايا الرئيسية
-- إدارة الفرق وأعضاء الفرق والنقاط.
-- إنشاء التحديات وتفعيلها وإنهاؤها وتحديد الفائز.
-- تحديث مباشر للترتيب والنشاط في الشاشة العامة.
-- صلاحيات منفصلة بين المشاهد والمنظّم.
-- حفظ البيانات محليًا في `server/data.json`.
+## Key Features
+- Manage teams, members, and scores.
+- Create, activate, complete, and award challenges.
+- Display live rankings and activity updates.
+- Separate public viewer and organizer permissions.
+- Store data locally in `server/data.json`.
 
-## التشغيل السريع (بدون بناء)
-يحتاج Node.js 18 أو أحدث فقط:
+## Quick Start
 
-أحدد كلمة مرور المنظّم قبل التشغيل:
+Requires Node.js 18 or later.
+
+Set the organizer password before starting the server.
 
 Windows (PowerShell):
-    $env:ORGANIZER_PASSWORD="كلمة-سر-قوية"; node server/server.cjs
 
-Mac / Linux:
-    ORGANIZER_PASSWORD="كلمة-سر-قوية" node server/server.cjs
+    $env:ORGANIZER_PASSWORD="strong-password"; node server/server.cjs
 
-ثم أفتح http://localhost:3000 وأختار "Organizer login". يمكن للطلاب على الشبكة نفسها فتح عنوان الجهاز لمشاهدة النتائج.
+macOS / Linux:
 
-## التطوير والبناء
-يحتاج Node.js 20.19+ (أو 22.12+):
+    ORGANIZER_PASSWORD="strong-password" node server/server.cjs
+
+Then open http://localhost:3000 and select **Organizer login**. Users on the same network can open the host machine address to view the scoreboard.
+
+## Development and Build
+
+Requires Node.js 20.19+ or 22.12+.
 
     npm install
     ORGANIZER_PASSWORD=secret npm run server
     npm run dev
 
-لإنشاء نسخة جاهزة للنشر:
+To create a production build:
 
     npm run build
